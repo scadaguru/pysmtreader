@@ -21,6 +21,7 @@ class SMTReader:
     def read_meter(self):
         status_code_read = -1
         meter_reading = ""
+        odrusage = ""
 
         self.__commonHelper.log_debug("About to read SMT meter")
         status_code_auth, auth_token = self.__get_auth_token()
