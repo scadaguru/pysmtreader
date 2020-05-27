@@ -59,13 +59,13 @@ home_assistant: # Home Assistant access details
 ~~~
 
 # What Data Sent to Home Assistant:
-### current_state: Latest reading value
-### prev_state: Previous reading value
-### difference: This is computed difference from latest and previoud reading, so if you polling once an hour it is  hourly usage
-### unit_of_measurement: KW
-### odrusage: This is provided by smartmetertexas.com and most likely it is total since last day
-### last_timestamp: Last read time in the format of 2020-05-27 14:30:01.674
+~~~
+    current_state: Latest reading value
+    prev_state: Previous reading value
+    difference: This is computed difference from latest and previoud reading, so if you polling once an hour it is  hourly usage
+    unit_of_measurement: KW
+    odrusage: This is provided by smartmetertexas.com and most likely it is total since last day
+    last_timestamp: Last read time in the format of 2020-05-27 14:30:01.674
+~~~
 
-## Below is the image how it looks in Home Assistant
-![Below is the image how it looks in Home Assistant](images/home_assistant.jpg)
-
+![Home Assistant](images/home_assistant.jpg)
