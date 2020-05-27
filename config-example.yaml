@@ -16,6 +16,6 @@ smartmetertexas: # smartmetertexas.com
     force_first_read: False # if true it will attempt to read Smart Meter Texas, otherwise at poll_interval
 
 home_assistant: # Home Assistant access details
-    base_url: _REPLACE_ # your Home Assistant URL/IP, no slash (/) at the end for example: http://192.168.1.149:8123
+    base_url: _REPLACE_ # your Home Assistant URL/IP, no slash (/) at the end for example: http://192.168.1.2:8123
     access_token: _REPLACE_ # your Home Assistant access token
     ha_entity: sensor.smt_reading # home assistnat entity name to be created
