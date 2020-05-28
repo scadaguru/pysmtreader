@@ -7,28 +7,6 @@ A Python application to poll your smart electric meter, this application uses an
 # What it does
 It polls [Smart Meter Texas](https://www.smartmetertexas.com) to get electric meter reading every hour (can be configured to read maximum twice per hour as restricted by SmartMeterTexas). Once read it will send read data to [Home Assistant](https://www.home-assistant.io/) 
 
-# How to use
-Applicaton is available at Docker Hub and can be used in one of the two ways:
-1. Docker
-
-   Run the following command:
-~~~
-docker run -d -v ./config/:/config scadaguru/pysmtreader
-~~~
-
-2. Docker Compose
-
-~~~
-version: "3"
-services:
-    pysmtreader:
-        container_name: pysmtreader
-        image: scadaguru/pysmtreader
-        volumes:
-            - ./config/:/config
-        restart: unless-stopped
-~~~
-
 # Update config.yaml file
 Update default config.yaml with your information mentioned below:
 Please update username, password, esiid, meter_number, base_url and access_token lines in the default config.yaml by removing "__REPLACE__" and providing your values otherwise application will not run!
@@ -55,6 +33,28 @@ home_assistant: # Home Assistant access details
     base_url: _REPLACE_ # your Home Assistant URL/IP, no slash (/) at the end for example: http://192.168.1.149:8123
     access_token: _REPLACE_ # your Home Assistant access token
     ha_entity: sensor.smt_reading # home assistnat entity name to be created
+~~~
+
+# How to use
+Applicaton is available at Docker Hub and can be used in one of the two ways:
+1. Docker
+
+   Run the following command:
+~~~
+docker run -d -v ${PWD}/:/config scadaguru/pysmtreader
+~~~
+
+2. Docker Compose
+
+~~~
+version: "3"
+services:
+    pysmtreader:
+        container_name: pysmtreader
+        image: scadaguru/pysmtreader
+        volumes:
+            - ./:/config
+        restart: unless-stopped
 ~~~
 
 # Data Sent to Home Assistant
