@@ -1,14 +1,13 @@
 # pysmtreader (Python based SMT Reader):
 
-Python application to poll electric Smart Meter Texas from https://www.smartmetertexas.com
+A Python application to poll your smart electric meter, this application uses an undocumented API for [Smart Meter Texas](https://www.smartmetertexas.com). 
 
-This application uses undocumented API for https://www.smartmetertexas.com.
-Big thanks to https://github.com/keatontaylor/smartmetertexas-api for the API details. 
+**Huge thanks** to [u/keatontaylor for the API Details](https://github.com/keatontaylor/smartmetertexas-api), without his documentation none of this would have been possible.
 
-# What it does: 
-It polls www.smartmetertexas.com to get electric meter reading every hour (can be configured to read maximum twice per hour as restricted by www.smartmetertexas.com). Once read it will send read data to Home Assistant (Read more details at https://www.home-assistant.io/) 
+# What it does
+It polls [Smart Meter Texas](https://www.smartmetertexas.com) to get electric meter reading every hour (can be configured to read maximum twice per hour as restricted by SmartMeterTexas). Once read it will send read data to [Home Assistant](https://www.home-assistant.io/) 
 
-# How to use: 
+# How to use
 Applicaton is available at Docker Hub and can be used in one of the two ways:
 1. Docker
 
@@ -30,7 +29,7 @@ services:
         restart: unless-stopped
 ~~~
 
-# Update config.yaml file:
+# Update config.yaml file
 Update default config,yaml with your information mentioned below:
 Please update username, password, esiid, meter_number, base_url and access_token lines in the default config.yaml by removing "__REPLACE__" and providing your values otherwise application will not run!
 
@@ -58,7 +57,7 @@ home_assistant: # Home Assistant access details
     ha_entity: sensor.smt_reading # home assistnat entity name to be created
 ~~~
 
-# What Data Sent to Home Assistant:
+# Data Sent to Home Assistant
 ~~~
     current_state: Latest reading value
     prev_state: Previous reading value
