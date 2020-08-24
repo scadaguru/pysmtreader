@@ -103,7 +103,7 @@ class MeterReadHelper:
             prev_reading = meter_reading
 
         attributes = dict()
-        attributes['unit_of_measurement'] = "KW"
+        attributes['unit_of_measurement'] = "kWh"
         attributes['prev_state'] = prev_reading
         attributes['current_state'] = meter_reading
         attributes['odrusage'] = odrusage

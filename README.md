@@ -1,11 +1,11 @@
 # pysmtreader (Python based SMT Reader):
 
-A Python application to poll your smart electric meter, this application uses an undocumented API for [Smart Meter Texas](https://www.smartmetertexas.com). 
+A Python application to poll your smart electric meter, this application uses an undocumented API for [Smart Meter Texas](https://www.smartmetertexas.com).
 
 **Huge thanks** to [u/keatontaylor for the API Details](https://github.com/keatontaylor/smartmetertexas-api), without his documentation none of this would have been possible.
 
 # What it does
-It polls [Smart Meter Texas](https://www.smartmetertexas.com) to get electric meter reading every hour (can be configured to read maximum twice per hour as restricted by SmartMeterTexas). Once read it will send read data to [Home Assistant](https://www.home-assistant.io/) 
+It polls [Smart Meter Texas](https://www.smartmetertexas.com) to get electric meter reading every hour (can be configured to read maximum twice per hour as restricted by SmartMeterTexas). Once read it will send read data to [Home Assistant](https://www.home-assistant.io/)
 
 # Update config.yaml file
 Update default config.yaml with your information mentioned below:
@@ -62,7 +62,7 @@ services:
     current_state: Latest reading value
     prev_state: Previous reading value
     difference: This is computed difference from latest and previoud reading, so if you polling once an hour it is  hourly usage
-    unit_of_measurement: KW
+    unit_of_measurement: kWh
     odrusage: This is provided by smartmetertexas.com and most likely it is total since last day
     last_timestamp: Last read time in the format of 2020-05-27 14:30:01.674
 ~~~
