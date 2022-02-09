@@ -103,12 +103,15 @@ class MeterReadHelper:
             prev_reading = meter_reading
 
         attributes = dict()
-        attributes['unit_of_measurement'] = "KW"
+        attributes['unit_of_measurement'] = "kWh"
+        attributes['device_class'] = "energy"
+        attributes['state_class'] = "total_increasing"
         attributes['prev_state'] = prev_reading
         attributes['current_state'] = meter_reading
         attributes['odrusage'] = odrusage
         attributes['last_timestamp'] = str(
             datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3])
+        attributes['last_reset'] = attributes['last_timestamp']
         try:
             attributes['difference'] = str(
                 round(float(meter_reading) - float(prev_reading), 3))
