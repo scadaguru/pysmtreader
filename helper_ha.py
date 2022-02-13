@@ -7,7 +7,7 @@ import traceback
 class CustomHAHelper:
     def __init__(self, config_folder):
         try:
-            self.config = yaml.load(open(config_folder + 'config.yaml'))
+            self.config = yaml.safe_load(open(config_folder + 'config.yaml'))
             self.base_url = self.config["home_assistant"]["base_url"]
             self.access_token = self.config["home_assistant"]["access_token"]
         except Exception as e:
