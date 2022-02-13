@@ -13,7 +13,7 @@ class CommonHelper:
 
     def __init__(self, config_folder):
         self.config_folder = config_folder
-        self.config = yaml.load(open(self.config_folder + 'config.yaml'))
+        self.config = yaml.safe_load(open(self.config_folder + 'config.yaml'))
 
         self.log_level = 2
         if self.config["logs"]["level"] == "debug":
